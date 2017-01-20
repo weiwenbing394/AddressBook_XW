@@ -72,9 +72,18 @@
     }
     NSString *key = _keys[indexPath.section];
     PPPersonModel *people = [_contactPeopleDict[key] objectAtIndex:indexPath.row];
-    cell.imageView.image = people.headerImage ? people.headerImage : [UIImage imageNamed:@"defult"];
-    cell.imageView.layer.cornerRadius = 60/2;
+    cell.imageView.image = people.headerImage ? people.headerImage : [UIImage imageNamed:@"defult-1.jpg"];
+    cell.imageView.layer.cornerRadius = 40/2;
     cell.imageView.clipsToBounds = YES;
+    
+    //iOS UITableViewCell 的 imageView大小更改
+    CGSize itemSize = CGSizeMake(40, 40);
+    UIGraphicsBeginImageContext(itemSize);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    [cell.imageView.image drawInRect:imageRect];
+    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
     cell.textLabel.text = people.name;
     cell.detailTextLabel.text=people.mobileArray[0];
     return cell;
