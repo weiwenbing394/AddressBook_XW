@@ -10,6 +10,7 @@
 #import "PPGetAddressBook.h"
 #import "SearchResultViewController.h"
 #import "PinYin4Objc.h"
+#import "AddressCell.h"
 
 @interface AddressBookDataSource ()<UISearchBarDelegate,SearchResultSelectedDelegate,UISearchControllerDelegate>{
     //搜索controller
@@ -48,7 +49,7 @@
     [allButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
     allButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     [allButton addTarget:self action:@selector(selectAll:) forControlEvents:UIControlEventTouchUpInside];
-    [allButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [allButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     UIButton *completeButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 64, 44)];
     [completeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
@@ -168,11 +169,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *reuseIdentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    AddressCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+        cell = [[AddressCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
     }
-    
     NSString *key = _keys[indexPath.section];
     PPPersonModel *people = [_contactPeopleDict[key] objectAtIndex:indexPath.row];
     cell.imageView.image = people.headerImage ? people.headerImage : [UIImage imageNamed:@"defult-1.jpg"];
@@ -191,6 +191,9 @@
     cell.detailTextLabel.text=people.mobileArray[0];
     return cell;
 }
+
+
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *key = _keys[indexPath.section];

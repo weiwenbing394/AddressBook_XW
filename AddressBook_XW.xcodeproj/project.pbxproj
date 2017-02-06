@@ -27,6 +27,7 @@
 		51A57C911E4855ED0002FAC9 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A57C891E4855ED0002FAC9 /* PinyinFormatter.m */; };
 		51A57C921E4855ED0002FAC9 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A57C8B1E4855ED0002FAC9 /* PinyinHelper.m */; };
 		51A57C931E4855ED0002FAC9 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 51A57C8D1E4855ED0002FAC9 /* unicode_to_hanyu_pinyin.txt */; };
+		51A57C971E4882130002FAC9 /* AddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A57C961E4882130002FAC9 /* AddressCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		51A57C8B1E4855ED0002FAC9 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
 		51A57C8D1E4855ED0002FAC9 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
 		51A57C941E48599E0002FAC9 /* AddressBook.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBook.pch; sourceTree = "<group>"; };
+		51A57C951E4882130002FAC9 /* AddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressCell.h; sourceTree = "<group>"; };
+		51A57C961E4882130002FAC9 /* AddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 		5145E0231E31BA5E0088BDF1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				51A57C951E4882130002FAC9 /* AddressCell.h */,
+				51A57C961E4882130002FAC9 /* AddressCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				51A57C901E4855ED0002FAC9 /* NSString+PinYin4Cocoa.m in Sources */,
 				51A57C921E4855ED0002FAC9 /* PinyinHelper.m in Sources */,
 				5145DFF31E31B5240088BDF1 /* AppDelegate.m in Sources */,
+				51A57C971E4882130002FAC9 /* AddressCell.m in Sources */,
 				51A57C911E4855ED0002FAC9 /* PinyinFormatter.m in Sources */,
 				5145DFF01E31B5240088BDF1 /* main.m in Sources */,
 			);
