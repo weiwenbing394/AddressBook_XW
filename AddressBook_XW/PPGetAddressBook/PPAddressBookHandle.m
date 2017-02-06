@@ -67,7 +67,12 @@ PPSingletonM(AddressBookHandle)
                 // 号码
                 NSString *phoneValue = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
                 NSString *mobile = [self removeSpecialSubString:phoneValue];
-                [model.mobileArray addObject: mobile ? mobile : @"空号"];
+                if (0<mobile.length) {
+                    [model.mobileArray addObject: mobile];
+                }
+            }
+            if (0==model.mobileArray.count) {
+                [model.mobileArray addObject:@"空号"];
             }
             [personModelArray addObject:model];
             CFRelease(phones);
@@ -103,7 +108,12 @@ PPSingletonM(AddressBookHandle)
                     // 号码
                     NSString *phoneValue = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
                     NSString *mobile = [self removeSpecialSubString:phoneValue];
-                    [model.mobileArray addObject: mobile ? mobile : @"空号"];
+                    if (0<mobile.length) {
+                        [model.mobileArray addObject: mobile];
+                    }
+                }
+                if (0==model.mobileArray.count) {
+                    [model.mobileArray addObject:@"空号"];
                 }
                 [personModelArray addObject:model];
                 CFRelease(phones);
@@ -147,7 +157,12 @@ PPSingletonM(AddressBookHandle)
             for (CNLabeledValue *labelValue in phones){
                 CNPhoneNumber *phoneNumber = labelValue.value;
                 NSString *mobile = [self removeSpecialSubString:phoneNumber.stringValue];
-                [model.mobileArray addObject: mobile ? mobile : @"空号"];
+                if (0<mobile.length) {
+                    [model.mobileArray addObject: mobile];
+                }
+            }
+            if (0==model.mobileArray.count) {
+                [model.mobileArray addObject:@"空号"];
             }
             [personModelArray addObject:model];
         }];
@@ -165,7 +180,7 @@ PPSingletonM(AddressBookHandle)
                 NSString *name = [CNContactFormatter stringFromContact:contact style:CNContactFormatterStyleFullName];
                 // 创建联系人模型
                 PPPersonModel *model = [PPPersonModel new];
-                model.name = name.length > 0 ? name : @"无名氏" ;
+                model.name = 0<name.length ? name : @"无名氏" ;
                 // 联系人头像
                 model.headerImage = [UIImage imageWithData:contact.thumbnailImageData];
                 // 获取一个人的所有电话号码
@@ -173,7 +188,12 @@ PPSingletonM(AddressBookHandle)
                 for (CNLabeledValue *labelValue in phones){
                     CNPhoneNumber *phoneNumber = labelValue.value;
                     NSString *mobile = [self removeSpecialSubString:phoneNumber.stringValue];
-                    [model.mobileArray addObject: mobile ? mobile : @"空号"];
+                    if (0<mobile.length) {
+                        [model.mobileArray addObject: mobile];
+                    }
+                }
+                if (0==model.mobileArray.count) {
+                    [model.mobileArray addObject:@"空号"];
                 }
                 [personModelArray addObject:model];
             }];
