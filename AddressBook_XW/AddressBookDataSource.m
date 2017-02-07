@@ -189,6 +189,7 @@
     
     cell.textLabel.text = people.name;
     cell.detailTextLabel.text=people.mobileArray[0];
+    NSLog(@"地址：%@,邮箱：%@,工作：%@,电话：%@",people.addressArray[0],people.emailArray[0],people.job,people.mobileArray[0]);
     return cell;
 }
 

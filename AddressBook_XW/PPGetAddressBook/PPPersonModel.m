@@ -17,4 +17,18 @@
     return _mobileArray;
 }
 
+- (NSMutableArray *)addressArray{
+    if (!_addressArray) {
+        _addressArray=[NSMutableArray array];
+    }
+    return _addressArray;
+}
+
+- (NSMutableArray *)emailArray{
+    if (!_emailArray) {
+        _emailArray=[NSMutableArray array];
+    }
+    return _emailArray;
+}
+
 @end

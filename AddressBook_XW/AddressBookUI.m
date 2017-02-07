@@ -24,6 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
     [PPGetAddressBook getOriginalAddressBook:^(NSArray<PPPersonModel *> *addressBookArray) {
         _BookArray=addressBookArray;
         [self.tableView reloadData];
@@ -33,6 +37,13 @@
     }];
 }
 
+- (NSInteger)add:(NSInteger)num{
+    if (num>1) {
+        NSLog(@"%ld",num);
+        return num*[self add:(num-1)];
+    }
+    return num;
+}
 
 #pragma mark - Table view data source
 

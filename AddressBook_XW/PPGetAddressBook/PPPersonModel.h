@@ -18,5 +18,11 @@
 @property (nonatomic, strong) NSMutableArray *mobileArray;
 /** 联系人头像*/
 @property (nonatomic, strong) UIImage *headerImage;
+/** 联系人地址数组,因为一个联系人可能存储多个地址*/
+@property (nonatomic, strong) NSMutableArray *addressArray;
+/** 联系人邮箱数组,因为一个联系人可能存储多个邮箱*/
+@property (nonatomic, strong) NSMutableArray *emailArray;
+/** 联系人工作信息*/
+@property (nonatomic, strong) NSString *job;
 
 @end
