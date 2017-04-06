@@ -28,6 +28,10 @@
 		51A57C921E4855ED0002FAC9 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A57C8B1E4855ED0002FAC9 /* PinyinHelper.m */; };
 		51A57C931E4855ED0002FAC9 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 51A57C8D1E4855ED0002FAC9 /* unicode_to_hanyu_pinyin.txt */; };
 		51A57C971E4882130002FAC9 /* AddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A57C961E4882130002FAC9 /* AddressCell.m */; };
+		51D609A21E9623850049C270 /* XW_AddressHandler_ios9Ago.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D6099B1E9623850049C270 /* XW_AddressHandler_ios9Ago.m */; };
+		51D609A31E9623850049C270 /* XW_AddressHandler_ios9Later.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D6099D1E9623850049C270 /* XW_AddressHandler_ios9Later.m */; };
+		51D609A41E9623850049C270 /* XW_AddressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D6099F1E9623850049C270 /* XW_AddressManager.m */; };
+		51D609A51E9623850049C270 /* XWPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D609A11E9623850049C270 /* XWPersonModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,14 @@
 		51A57C941E48599E0002FAC9 /* AddressBook.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBook.pch; sourceTree = "<group>"; };
 		51A57C951E4882130002FAC9 /* AddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressCell.h; sourceTree = "<group>"; };
 		51A57C961E4882130002FAC9 /* AddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressCell.m; sourceTree = "<group>"; };
+		51D6099A1E9623850049C270 /* XW_AddressHandler_ios9Ago.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XW_AddressHandler_ios9Ago.h; sourceTree = "<group>"; };
+		51D6099B1E9623850049C270 /* XW_AddressHandler_ios9Ago.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XW_AddressHandler_ios9Ago.m; sourceTree = "<group>"; };
+		51D6099C1E9623850049C270 /* XW_AddressHandler_ios9Later.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XW_AddressHandler_ios9Later.h; sourceTree = "<group>"; };
+		51D6099D1E9623850049C270 /* XW_AddressHandler_ios9Later.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XW_AddressHandler_ios9Later.m; sourceTree = "<group>"; };
+		51D6099E1E9623850049C270 /* XW_AddressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XW_AddressManager.h; sourceTree = "<group>"; };
+		51D6099F1E9623850049C270 /* XW_AddressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XW_AddressManager.m; sourceTree = "<group>"; };
+		51D609A01E9623850049C270 /* XWPersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPersonModel.h; sourceTree = "<group>"; };
+		51D609A11E9623850049C270 /* XWPersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPersonModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				51A57C7F1E4855ED0002FAC9 /* PinYin4Objc */,
+				51D609991E9623850049C270 /* 通讯录(增删改查) */,
 				5145E02C1E31BEE90088BDF1 /* PPGetAddressBook */,
 			);
 			name = ThirdLib;
@@ -279,6 +292,22 @@
 				51A57C8D1E4855ED0002FAC9 /* unicode_to_hanyu_pinyin.txt */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		51D609991E9623850049C270 /* 通讯录(增删改查) */ = {
+			isa = PBXGroup;
+			children = (
+				51D6099A1E9623850049C270 /* XW_AddressHandler_ios9Ago.h */,
+				51D6099B1E9623850049C270 /* XW_AddressHandler_ios9Ago.m */,
+				51D6099C1E9623850049C270 /* XW_AddressHandler_ios9Later.h */,
+				51D6099D1E9623850049C270 /* XW_AddressHandler_ios9Later.m */,
+				51D6099E1E9623850049C270 /* XW_AddressManager.h */,
+				51D6099F1E9623850049C270 /* XW_AddressManager.m */,
+				51D609A01E9623850049C270 /* XWPersonModel.h */,
+				51D609A11E9623850049C270 /* XWPersonModel.m */,
+			);
+			name = "通讯录(增删改查)";
+			path = "通讯录";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,14 +446,18 @@
 			files = (
 				5145DFF61E31B5240088BDF1 /* ViewController.m in Sources */,
 				5145E0351E31BEE90088BDF1 /* PPGetAddressBook.m in Sources */,
+				51D609A21E9623850049C270 /* XW_AddressHandler_ios9Ago.m in Sources */,
 				51A57C7E1E4851C40002FAC9 /* SearchResultViewController.m in Sources */,
 				5145E0361E31BEE90088BDF1 /* PPPersonModel.m in Sources */,
+				51D609A41E9623850049C270 /* XW_AddressManager.m in Sources */,
 				5145E0341E31BEE90088BDF1 /* PPAddressBookHandle.m in Sources */,
 				51A57C8E1E4855ED0002FAC9 /* ChineseToPinyinResource.m in Sources */,
 				51A57C8F1E4855ED0002FAC9 /* HanyuPinyinOutputFormat.m in Sources */,
 				5145E02A1E31BAAB0088BDF1 /* AddressBookDataSource.m in Sources */,
 				5145E0271E31BA900088BDF1 /* AddressBookUI.m in Sources */,
+				51D609A51E9623850049C270 /* XWPersonModel.m in Sources */,
 				51A57C901E4855ED0002FAC9 /* NSString+PinYin4Cocoa.m in Sources */,
+				51D609A31E9623850049C270 /* XW_AddressHandler_ios9Later.m in Sources */,
 				51A57C921E4855ED0002FAC9 /* PinyinHelper.m in Sources */,
 				5145DFF31E31B5240088BDF1 /* AppDelegate.m in Sources */,
 				51A57C971E4882130002FAC9 /* AddressCell.m in Sources */,

@@ -40,6 +40,7 @@ PPSingletonM(AddressBookHandle)
 - (void)getDataSourceFrom_IOS9_Ago:(PPPersonModelArrayBlock)ModelArray FaildBlock:(void(^)(void))faild{
     // 1.获取授权状态
     ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
+    NSLog(@"这里");
     // 2.如果没有授权,先执行授权
     if (status == kABAuthorizationStatusAuthorized){
         [self DataSourceFrom_IOS9_Ago:ModelArray];
